@@ -14,13 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      name: Build the Docker image
+    - name: Build the Docker image
       env:
         USER: ${{ secrets.USER }}
         PASS: ${{ secrets.PASS }}
-        run: |
-          echo $USER
-          echo $PASS
-          docker build . --file Dockerfile --tag aziz007/dcm_webserver:latest
-          docker login -u $USER -p $PASS
-          docker push aziz007/dcm_webserver:latest
+      run: |
+         echo $USER
+         echo $PASS
+         docker build . --file Dockerfile --tag aziz007/dcm_webserver:latest
+         docker login -u $USER -p $PASS
+         docker push aziz007/dcm_webserver:latest
