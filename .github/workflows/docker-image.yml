@@ -19,8 +19,8 @@ jobs:
         USER: ${{ secrets.USER }}
         PASS: ${{ secrets.PASS }}
       run: |
-         echo $USER
-         echo $PASS
-         docker build . --file Dockerfile --tag aziz007/dcm_webserver:latest
-         docker login -u $USER -p $PASS
-         docker push aziz007/dcm_webserver:latest
+        echo $USER
+        echo $PASS
+        docker build . --file Dockerfile --tag aziz007/dcm_webserver:latest
+        docker login -u $USER -p $PASS
+        docker push aziz007/dcm_webserver:latest
